@@ -6,6 +6,6 @@ dependencies:
   - drupal:views
 
 # Information added by Drupal.org packaging script on 2024-08-01
-version: '8.x-1.12+12-dev'
+version: '8.x-1.13'
 project: 'pathauto'
-datestamp: 1722507277
+datestamp: 1722507674

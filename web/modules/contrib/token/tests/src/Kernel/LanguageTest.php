@@ -165,7 +165,7 @@ class LanguageTest extends TokenKernelTestBase {
    *
    * @see testLanguageTokenReplacement()
    */
-  public static function languageTokenReplacementDataProvider() {
+  public function languageTokenReplacementDataProvider() {
     return [
       [
         // Test the replacement of the name of the site default language.
@@ -240,7 +240,7 @@ class LanguageTest extends TokenKernelTestBase {
    *
    * @see testCurrentPageLanguageTokenReplacement()
    */
-  public static function currentPageLanguageTokenReplacementDataProvider() {
+  public function currentPageLanguageTokenReplacementDataProvider() {
     return [
       [
         // Test the replacement of the language name token, taken from the

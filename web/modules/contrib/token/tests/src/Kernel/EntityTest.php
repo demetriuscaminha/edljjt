@@ -93,7 +93,7 @@ class EntityTest extends TokenKernelTestBase {
     $this->assertTokens('node', ['node' => $node], $tokens);
 
     // Emulate the original entity property that would be available from
-    // during node save and change the title for the node.
+    // node_save() and change the title for the node.
     $node->original = \Drupal::entityTypeManager()->getStorage('node')->loadUnchanged($node->id());
     $node->title = 'New title';
 
