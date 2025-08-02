@@ -1,0 +1,83 @@
+@use "variables" as *;
+
+.form-control,
+btn,
+.btn,
+button {
+    &:focus {
+        border-color: none;
+        box-shadow: none !important;
+        outline: none;
+    }
+}
+
+%card-highlight-structure {
+    position: relative;
+
+    .card-body {
+        position: absolute;
+        bottom: 30px;
+        z-index: 1;
+        left: 30px;
+        right: 30px;
+        color: white;
+
+        .category-highlight {
+            text-transform: uppercase;
+            background: $tagDestaque;
+            font-weight: 300;
+            font-size: 11px;
+            display: inline-block;
+            padding: 7px 12px;
+            margin: 0 0 15px;
+        }
+
+        .card-title {
+            font-size: 20;
+            font-weight: bold;
+            margin: 0 0 15px;
+        }
+
+        .card-date {
+            font-size: 12px;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0) 23%,
+                rgba(0, 0, 0, 0.7) 100%);
+    }
+}
+
+%title-block {
+    padding: 2px 0 0 8px;
+    border-left: 4px solid $tagDestaque;
+    line-height: 1;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+ul.slick-dots{
+    li{
+        margin: 0;
+        width: 15px;
+        button:before{
+            font-size: 8px;
+        }
+        &.slick-active{
+            button:before{
+                font-size: 10px;
+                color: $tagDestaque;
+            }
+        }
+    }
+}

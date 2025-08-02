@@ -1,0 +1,13 @@
+name: Generated Content Example 1
+type: module
+description: Example 1 to programmatically generate content.
+core_version_requirement: ^9 || ^10 || ^11
+package: Other
+dependencies:
+  - generated_content:generated_content
+  - drupal:media
+
+# Information added by Drupal.org packaging script on 2024-07-05
+version: '1.5.3'
+project: 'generated_content'
+datestamp: 1720149697

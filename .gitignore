@@ -1,0 +1,16 @@
+composer.lock
+\.idea
+node_modules
+sites/default/files/css
+sites/default/files/styles
+sites/default/files/dynamicjs
+sites/default/files/js
+sites/default/files/tmp
+sites/default/files/php/
+sites/default/files/translations
+sites/default/files/languages
+*\.DS_Store
+*.DS_Store
+sites/default/*
+sites/development.services.yml
+modules/README.md

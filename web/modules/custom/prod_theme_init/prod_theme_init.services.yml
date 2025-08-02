@@ -1,0 +1,10 @@
+services:
+  theme.initialization:
+    class: Drupal\prod_theme_init\Theme\ProductionThemeInitialization
+    arguments:
+      - '%app.root%'
+      - '@theme_handler'
+      - '@cache.bootstrap'
+      - '@module_handler'
+    tags:
+      - { name: service_collector }

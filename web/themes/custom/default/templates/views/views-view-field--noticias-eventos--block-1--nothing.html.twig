@@ -1,0 +1,41 @@
+{# Só exibe o card se field_highlight for 0 ou vazio #}
+{% if not row._entity.field_highlight.value %}
+  <div class="content-card">
+   <a href="{{ path('entity.node.canonical', {'node': row._entity.id()}) }}">
+    <div class="card-highlight">
+      {# IMAGEM #}
+      {% if row._entity.field_imagem_noticia.entity.uri.value %}
+        <img src="{{ row._entity.field_imagem_noticia.entity.uri.value | image_style('destaquehome') }}" alt="{{ row._entity.field_imagem_noticia.alt }}" />
+      {% endif %}
+
+      <div class="card-body">
+        {# CATEGORIAS #}
+        {% if row._entity.field_categoria_noticias|length %}
+          <div class="category-highlight">
+            {% for item in row._entity.field_categoria_noticias %}
+              {{ item.entity.label() }}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {# TÍTULO #}
+        <div class="card-title">
+            {{ row._entity.title.value }}
+        </div>
+
+        {# DATA #}
+        {% if row._entity.field_data_noticia.value %}
+          <div class="card-date">
+            {{ row._entity.field_data_noticia.value|date("d/m/Y") }}
+          </div>
+        {% endif %}
+
+        {# TEXTO PERSONALIZADO (nothing) #}
+        {% if nothing %}
+          <p class="card-text">{{ nothing }}</p>
+        {% endif %}
+      </div>
+    </div>
+    </a>
+  </div>
+{% endif %}

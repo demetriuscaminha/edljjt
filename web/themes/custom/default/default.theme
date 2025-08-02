@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+function default_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
+{
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+}
+
+function YOURTHEME_preprocess_views_view_fields(array &$variables)
+{
+  Kint::dump($variables);
+}
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function default_preprocess_page(array &$variables)
+{
+  $logo_uri = theme_get_setting('logo.url');
+  if ($logo_uri) {
+
+    $variables['logo'] = \Drupal::service('file_url_generator')
+      ->generateString($logo_uri);
+  }
+
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+
+  $variables['front_page'] = $variables['front_page'] ?? \Drupal::url('<front>');
+}

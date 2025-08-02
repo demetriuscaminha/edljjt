@@ -1,0 +1,4 @@
+name: Production theme init
+type: module
+core_version_requirement: ^9 || ^10
+package: Custom

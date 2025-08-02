@@ -1,0 +1,49 @@
+name: Default theme
+type: theme
+description: 'Basic structure for a Default theme.'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+base theme: bootstrap_barrio
+
+libraries:
+  - default/bootstrap_cdn
+  - default/slick
+  - default/fontawesome
+  - default/owl-carousel
+  - default/global-styling
+
+regions:
+  top_header: 'Top header'
+  top_header_form: 'Top header form'
+  search_form: 'Busca'
+  header: Header
+  header_form: 'Header form'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  news_main: 'News main'
+  featured_news: 'Featured news'
+  editorial: Editorial
+  news_content: 'Noticias centro'
+  news_sidebar: 'Noticias lado'
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  featured_bottom_second: 'Featured bottom second'
+  featured_bottom_third: 'Featured bottom third'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'
+  footer_subfooter: 'SubFooter'
+
+# Information added by Drupal.org packaging script on 2023-03-25
+version: '5.5.10'
+project: 'bootstrap_barrio'
+datestamp: 1679769015

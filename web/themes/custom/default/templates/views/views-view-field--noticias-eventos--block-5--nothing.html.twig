@@ -1,0 +1,41 @@
+{% if row._entity.field_highlight.value %}
+  <div class="collun-content-card">
+   <a class="text-white" href="{{ path('entity.node.canonical', {'node': row._entity.id()}) }}">
+    <div class="card-highlight">
+
+      {% if row._entity.field_imagem_noticia.entity.uri.value %}
+  <img
+    src="{{ row._entity.field_imagem_noticia.entity.uri.value | image_style('destaquerelacionado') }}"
+    class="card-img-top"
+    alt="{{ row._entity.field_imagem_noticia.alt }}"
+  />
+{% endif %}
+
+      <div class="card-body">
+        {% if row._entity.field_categoria_noticias|length %}
+          <div class="category-highlight">
+            {% for item in row._entity.field_categoria_noticias %}
+              {{ item.entity.label() }}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="card-title">
+            {{ row._entity.title.value }}
+        </div>
+
+        {% if row._entity.field_data_noticia.value %}
+          <div class="card-date">
+            {{ row._entity.field_data_noticia.value|date("d/m/Y") }}
+          </div>
+        {% endif %}
+
+
+        {% if nothing %}
+          <p class="card-text">{{ nothing }}</p>
+        {% endif %}
+      </div>
+    </div>
+    </a>
+  </div>
+{% endif %}
