@@ -4,10 +4,9 @@ description: Example 2 to programmatically generate content.
 core_version_requirement: ^9 || ^10 || ^11
 package: Other
 dependencies:
-  - generated_content:generated_content
   - drupal:media
 
-# Information added by Drupal.org packaging script on 2024-07-05
-version: '1.5.3'
+# Information added by Drupal.org packaging script on 2025-05-13
+version: '1.5.4'
 project: 'generated_content'
-datestamp: 1720149697
+datestamp: 1747131920
