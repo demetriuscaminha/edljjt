@@ -876,7 +876,7 @@
                 "source": "https://git.drupalcode.org/project/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
             },
-            "install-path": "../../web/modules/contrib/admin_toolbar"
+            "install-path": "../../modules/contrib/admin_toolbar"
         },
         {
             "name": "drupal/block_classes",
@@ -928,7 +928,7 @@
                 "source": "https://git.drupalcode.org/project/block_classes",
                 "issues": "https://www.drupal.org/project/issues/block_classes"
             },
-            "install-path": "../../web/modules/contrib/block_classes"
+            "install-path": "../../modules/contrib/block_classes"
         },
         {
             "name": "drupal/bootstrap_barrio",
@@ -985,7 +985,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap_barrio"
             },
-            "install-path": "../../web/themes/contrib/bootstrap_barrio"
+            "install-path": "../../themes/contrib/bootstrap_barrio"
         },
         {
             "name": "drupal/coffee",
@@ -1061,7 +1061,7 @@
                 "issues": "https://drupal.org/project/issues/coffee",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "install-path": "../../web/modules/contrib/coffee"
+            "install-path": "../../modules/contrib/coffee"
         },
         {
             "name": "drupal/core",
@@ -1228,7 +1228,7 @@
             "support": {
                 "source": "https://github.com/drupal/core/tree/10.5.1"
             },
-            "install-path": "../../web/core"
+            "install-path": "../../core"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -1508,7 +1508,7 @@
                 "source": "https://git.drupalcode.org/project/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
             },
-            "install-path": "../../web/modules/contrib/ctools"
+            "install-path": "../../modules/contrib/ctools"
         },
         {
             "name": "drupal/devel",
@@ -1572,7 +1572,7 @@
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
             },
-            "install-path": "../../web/modules/contrib/devel"
+            "install-path": "../../modules/contrib/devel"
         },
         {
             "name": "drupal/fontawesome",
@@ -1629,7 +1629,7 @@
                 "source": "https://git.drupalcode.org/project/fontawesome",
                 "issues": "https://drupal.org/project/issues/fontawesome"
             },
-            "install-path": "../../web/modules/contrib/fontawesome"
+            "install-path": "../../modules/contrib/fontawesome"
         },
         {
             "name": "drupal/generated_content",
@@ -1688,7 +1688,7 @@
                 "source": "https://git.drupalcode.org/project/generated_content",
                 "issues": "https://drupal.org/project/issues/generated_content"
             },
-            "install-path": "../../web/modules/contrib/generated_content"
+            "install-path": "../../modules/contrib/generated_content"
         },
         {
             "name": "drupal/mobile_detect",
@@ -1744,7 +1744,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/mobile_detect"
             },
-            "install-path": "../../web/modules/contrib/mobile_detect"
+            "install-path": "../../modules/contrib/mobile_detect"
         },
         {
             "name": "drupal/pathauto",
@@ -1818,7 +1818,7 @@
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
             },
-            "install-path": "../../web/modules/contrib/pathauto"
+            "install-path": "../../modules/contrib/pathauto"
         },
         {
             "name": "drupal/token",
@@ -1893,7 +1893,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
             },
-            "install-path": "../../web/modules/contrib/token"
+            "install-path": "../../modules/contrib/token"
         },
         {
             "name": "drupal/webform",
@@ -2007,7 +2007,7 @@
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
             },
-            "install-path": "../../web/modules/contrib/webform"
+            "install-path": "../../modules/contrib/webform"
         },
         {
             "name": "egulias/email-validator",
