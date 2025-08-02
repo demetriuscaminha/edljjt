@@ -1,13 +1,13 @@
 /**
  * @file
- * Visual styles for Bootstrap Barrio's form components.
+ * Visual styles for Bootstrap's form components.
  */
 
 .form-required::after {
   content: '';
   vertical-align: super;
   display: inline-block;
-  background-image: url(/themes/contrib/bootstrap_barrio/images/required.svg);
+  background-image: url(../../images/required.svg);
   background-repeat: no-repeat;
   background-size: 7px 7px;
   width: 7px;
@@ -28,4 +28,16 @@ form .filter-wrapper {
 
 form .form-type-textarea {
   margin-bottom: 0;
+}
+
+/* link-edit-summary css */
+.link-edit-summary {
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  color: var(--bs-link-color);
+}
+
+.image-button.form-control {
+  border:none;
 }

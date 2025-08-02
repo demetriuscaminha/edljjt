@@ -25,48 +25,10 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('bootstrap_barrio/alerts') }}
 
-<div class="alert-wrapper" data-drupal-messages>
-{% for type, messages in message_list %}
-  {%
-    set classes = [
-      'alert',
-      'alert-dismissible',
-      'fade',
-      'show',
-      'col-12',
-      type == 'status' ? 'alert-success',
-      type == 'warning' ? 'alert-warning',
-      type == 'error' ? 'alert-danger',
-      type == 'info' ? 'alert-info',
-    ]
-  %}
-  {%
-    set role = {
-      'status': 'status',
-      'error': 'alert',
-      'warning': 'alert',
-      'info': 'status',
-    }
-  %}
-  <div aria-label="{{ status_headings[type] }}" {{ attributes|without('role', 'aria-label').addClass(classes).setAttribute('role', role[type]) }}>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    {% if is_message_with_title or is_message_with_icon %}
-      {% if is_message_with_title %}
-        <h4 id="{{ title_ids[type] }}" class="alert-heading">
-          {{ status_headings[type] }}
-        </h4>
-      {% endif %}
-    {% endif %}
-    {% for message in messages %}
-      {% if loop.last %}
-        {{ message }}
-      {% else %}
-        {{ message }}
-        <hr>
-      {% endif %}
-    {% endfor %}
-  </div>
-{% endfor %}
-</div>
+{{ include('bootstrap_barrio:alert',
+  { message_list: message_list,
+    status_headings: status_headings,
+    attributes: attributes
+  })
+}}

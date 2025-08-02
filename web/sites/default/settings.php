@@ -899,8 +899,8 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 // }
 $databases['default']['default'] = array(
   'database' => 'darcio33_edljjt',
-  'username' => 'darcio33_edljjt',
-  'password' => 'G)fm3QJ!5j@a',
+  'username' => 'root',
+  'password' => '',
   'prefix' => 'edljjt_',
   'host' => 'localhost',
   'port' => '3306',

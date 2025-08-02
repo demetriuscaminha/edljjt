@@ -10,8 +10,7 @@ use Drupal\Core\Extension\ThemeHandlerInterface;
 /**
  * Provides the theme initialization logic.
  */
-class ThemeInitialization implements ThemeInitializationInterface
-{
+class ThemeInitialization implements ThemeInitializationInterface {
 
   /**
    * The theme handler.
@@ -60,8 +59,7 @@ class ThemeInitialization implements ThemeInitializationInterface
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler to use to load modules.
    */
-  public function __construct($root, ThemeHandlerInterface $theme_handler, CacheBackendInterface $cache, ModuleHandlerInterface $module_handler)
-  {
+  public function __construct($root, ThemeHandlerInterface $theme_handler, CacheBackendInterface $cache, ModuleHandlerInterface $module_handler) {
     $this->root = $root;
     $this->themeHandler = $theme_handler;
     $this->cache = $cache;
@@ -71,8 +69,7 @@ class ThemeInitialization implements ThemeInitializationInterface
   /**
    * {@inheritdoc}
    */
-  public function initTheme($theme_name)
-  {
+  public function initTheme($theme_name) {
     $active_theme = $this->getActiveThemeByName($theme_name);
     $this->loadActiveTheme($active_theme);
 
@@ -82,8 +79,7 @@ class ThemeInitialization implements ThemeInitializationInterface
   /**
    * {@inheritdoc}
    */
-  public function getActiveThemeByName($theme_name)
-  {
+  public function getActiveThemeByName($theme_name) {
     if ($cached = $this->cache->get('theme.active_theme.' . $theme_name)) {
       return $cached->data;
     }
@@ -130,8 +126,7 @@ class ThemeInitialization implements ThemeInitializationInterface
   /**
    * {@inheritdoc}
    */
-  public function loadActiveTheme(ActiveTheme $active_theme)
-  {
+  public function loadActiveTheme(ActiveTheme $active_theme) {
     // Initialize the theme.
     if ($active_theme->getEngine()) {
       // Include the engine.
@@ -140,7 +135,8 @@ class ThemeInitialization implements ThemeInitializationInterface
         $base->load();
       }
       $active_theme->getExtension()->load();
-    } else {
+    }
+    else {
       // Include non-engine theme files
       foreach (array_reverse($active_theme->getBaseThemeExtensions()) as $base) {
         // Include the theme file or the engine.
@@ -161,8 +157,7 @@ class ThemeInitialization implements ThemeInitializationInterface
   /**
    * {@inheritdoc}
    */
-  public function getActiveTheme(Extension $theme, array $base_themes = [])
-  {
+  public function getActiveTheme(Extension $theme, array $base_themes = []) {
     $theme_path = $theme->getPath();
 
     $values['path'] = $theme_path;
@@ -172,7 +167,8 @@ class ThemeInitialization implements ThemeInitializationInterface
     // from the themes root.
     if (!empty($theme->info['logo'])) {
       $values['logo'] = $theme->getPath() . '/' . $theme->info['logo'];
-    } else {
+    }
+    else {
       $values['logo'] = $theme->getPath() . '/logo.svg';
     }
 
@@ -205,7 +201,8 @@ class ThemeInitialization implements ThemeInitializationInterface
             // Merge if libraries-extend has already been defined for this
             // library.
             $values['libraries_extend'][$library] = array_merge($values['libraries_extend'][$library], $extend);
-          } else {
+          }
+          else {
             $values['libraries_extend'][$library] = $extend;
           }
         }
@@ -218,7 +215,8 @@ class ThemeInitialization implements ThemeInitializationInterface
           // Merge if libraries-extend has already been defined for this
           // library.
           $values['libraries_extend'][$library] = array_merge($values['libraries_extend'][$library], $extend);
-        } else {
+        }
+        else {
           $values['libraries_extend'][$library] = $extend;
         }
       }
@@ -265,8 +263,7 @@ class ThemeInitialization implements ThemeInitializationInterface
    *
    * @return array
    */
-  protected function getExtensions()
-  {
+  protected function getExtensions() {
     if (!isset($this->extensions)) {
       $this->extensions = array_merge($this->moduleHandler->getModuleList(), $this->themeHandler->listInfo());
     }
@@ -284,8 +281,7 @@ class ThemeInitialization implements ThemeInitializationInterface
    *
    * @todo Remove in Drupal 9.0.x.
    */
-  protected function resolveStyleSheetPlaceholders($css_file)
-  {
+  protected function resolveStyleSheetPlaceholders($css_file) {
     $token_candidate = explode('/', $css_file)[0];
     if (!preg_match('/@[A-z0-9_-]+/', $token_candidate)) {
       return $css_file;
@@ -299,4 +295,5 @@ class ThemeInitialization implements ThemeInitializationInterface
       return str_replace($token_candidate, $extensions[$token]->getPath(), $css_file);
     }
   }
+
 }
