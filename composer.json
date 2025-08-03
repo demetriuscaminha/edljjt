@@ -28,6 +28,8 @@
         "drupal/generated_content": "^1.5",
         "drupal/mobile_detect": "4.0",
         "drupal/pathauto": "1.13",
+        "drupal/slick": "3.0",
+        "drupal/slick_views": "3.0",
         "drupal/webform": "6.2"
     },
     "conflict": {
