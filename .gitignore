@@ -41,3 +41,7 @@ sites/simpletest
 # Ignore multi-site test environment.
 # simpletest
 vendor/composer/autoload_real.php
+
+# Ignore GULP modules.
+node_modules/*
+themes/custom/default/node_modules/*

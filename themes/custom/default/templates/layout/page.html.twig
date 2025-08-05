@@ -74,6 +74,19 @@
 <div id="page-wrapper">
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t }}">
+    <div class="content-header">
+   <div class="site-branding container">
+    {% if logo %}
+      <div class="logo">
+        <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+          <img src="{{ logo }}" alt="{{ site_name|default('') }}" class="img-fluid" draggable="false"/>
+        </a>
+      </div>
+    {% endif %}
+    {% if page.search_form %}
+      {{ page.search_form }}
+    {% endif %}
+   </div>
       {% block head %}
         {% if page.secondary_menu or page.top_header or page.top_header_form %}
           <nav{{ navbar_top_attributes }}>
@@ -150,15 +163,15 @@
       {% block content %}
         <div id="main" class="{{ container }}">
           {{ page.breadcrumb }}
-{# Define dinamicamente o tamanho das colunas com base nos sidebars existentes #}
-{% set col_content = 12 %}
-{% if sidebar_first_exists and sidebar_second_exists %}
-  {% set col_sidebar = 3 %}
-  {% set col_content = 6 %}
-{% elseif sidebar_first_exists or sidebar_second_exists %}
-  {% set col_sidebar = 3 %}
-  {% set col_content = 9 %}
-{% endif %}
+      {# Define dinamicamente o tamanho das colunas com base nos sidebars existentes #}
+      {% set col_content = 12 %}
+      {% if sidebar_first_exists and sidebar_second_exists %}
+        {% set col_sidebar = 4 %}
+        {% set col_content = 8 %}
+      {% elseif sidebar_first_exists or sidebar_second_exists %}
+        {% set col_sidebar = 4 %}
+        {% set col_content = 8 %}
+      {% endif %}
 
 <div class="row clearfix">
   {% if sidebar_first_exists %}

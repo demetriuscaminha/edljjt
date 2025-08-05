@@ -93,7 +93,7 @@ header {
 
                &.social-youtube a,
                &.social-instagram a,
-               &.social-facebook a{
+               &.social-facebook a {
                   display: inline-block;
                   text-indent: -999999px;
                   background: transparent url(../images/icon-youtube.svg) no-repeat center center;
@@ -101,11 +101,11 @@ header {
                   width: 32px;
                }
 
-               &.social-instagram a{
+               &.social-instagram a {
                   background: transparent url(../images/icon-instagram.svg) no-repeat center center;
                }
 
-               &.social-facebook a{
+               &.social-facebook a {
                   background: transparent url(../images/icon-facebook.svg) no-repeat center center;
                }
             }
@@ -126,14 +126,6 @@ header {
       font-weight: 300;
       justify-content: space-around;
 
-      a {
-         color: white;
-
-         &:hover {
-            color: $secondary;
-         }
-      }
-
       .navbar-collapse {
          justify-content: space-around !important;
       }
@@ -145,24 +137,9 @@ header {
             a {
                color: white;
 
-               &:hover {
+               &:hover,
+               &.active {
                   color: $secondary;
-               }
-
-               &.nav-link {
-                  color: white !important;
-               }
-            }
-
-            ul.dropdown-menu {
-               li.dropdown-item {
-                  a {
-                     color: black !important;
-
-                     &:hover {
-                        color: gray !important;
-                     }
-                  }
                }
             }
          }
@@ -176,6 +153,13 @@ nav[aria-label="breadcrumb"] {
 
 .title-block {
    @extend %title-block;
+}
+
+#block-default-page-title {
+   h1.title {
+      @extend %title-block;
+      font-size: 2rem;
+   }
 }
 
 .main-wrapper {
@@ -227,44 +211,45 @@ nav[aria-label="breadcrumb"] {
 .block-views-blockcultura-block-1 {
 
    .css-destaques-esportivos,
-   .css-bloco-cultura {
-      .views-field-nothing {
-         .item-list {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
+   .css-bloco-cultura,
+   {
+   .views-field-nothing {
+      .item-list {
+         margin-bottom: 20px;
+         display: flex;
+         align-items: flex-start;
+         gap: 15px;
 
-            .content-header {
-               flex: 1;
-               min-width: 0;
+         .content-header {
+            flex: 1;
+            min-width: 0;
 
-               .content-category {
-                  text-transform: uppercase;
-                  font-size: 14px;
-                  font-weight: bold;
-               }
-
-               .content-title {
-                  font-size: 15px;
-                  font-weight: 500;
-                  margin-bottom: 5px;
-               }
-
-               .content-date {
-                  font-size: 12px;
-                  font-weight: 500;
-                  color: $text-date;
-               }
+            .content-category {
+               text-transform: uppercase;
+               font-size: 14px;
+               font-weight: bold;
             }
 
-            .content-image {
-               width: 150px;
-               flex-shrink: 0;
+            .content-title {
+               font-size: 15px;
+               font-weight: 500;
+               margin-bottom: 5px;
             }
+
+            .content-date {
+               font-size: 12px;
+               font-weight: 500;
+               color: $text-date;
+            }
+         }
+
+         .content-image {
+            width: 150px;
+            flex-shrink: 0;
          }
       }
    }
+}
 }
 
 .css-block-interativo {
@@ -421,6 +406,171 @@ nav[aria-label="breadcrumb"] {
 
       &:hover {
          color: $danger;
+      }
+   }
+}
+
+.css-page-amigos {
+   .views-field-field-imagem-amigos {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 15px;
+   }
+
+   .views-field-title {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      
+      a {
+         font-size: 1rem;
+         font-weight: 500;
+         margin-bottom: 5px;
+      }
+   }
+}
+
+.css-editorial-bloco-relacionado,
+.css-block-forum-relacionado {
+   .views-row {
+      margin: 0 0 15px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid $border;
+
+      .views-field-title {
+         a {
+            font-weight: 500;
+         }
+      }
+   }
+}
+
+.css-block-videos-relacionados {
+   .views-row {
+      margin: 0 0 15px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid $border;
+
+      .views-field-field-link-video {
+         margin: 0 0 10px;
+         padding: 0;
+      }
+
+      .views-field-title {
+         margin: 0;
+         padding: 0;
+
+         a {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+         }
+      }
+   }
+}
+
+.listagem-noticias-eventos {
+
+   .banner-content,
+   .view-content {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+   }
+
+   .views-row {
+      background: $muted;
+      color: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin: 0;
+   }
+
+   .views-row.current {
+      border-left: 4px solid #d97706;
+      /* tom de laranja ou cor da faixa */
+   }
+
+   .views-row:hover {
+      transform: scale(1.01);
+   }
+
+   .views-field-field-data-noticia,
+   .views-field-field-data-editorial,
+   .views-field-field-data-forum {
+      color: $text-date;
+      font-size: 0.875rem;
+      margin-bottom: 5px;
+   }
+
+   .views-field-title a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.125rem;
+      display: inline-block;
+      position: relative;
+
+      &:hover {
+         color: $danger;
+      }
+   }
+
+   .views-field-body {
+      color: $text-default;
+      font-size: 1.0rem;
+      display: inline-block;
+      position: relative;
+   }
+}
+
+.css-noticias-relacionadas {
+   .views-field-nothing {
+      .item-list {
+         margin-bottom: 20px;
+         display: flex;
+         align-items: flex-start;
+         gap: 20px;
+         flex-direction: row-reverse;
+
+         .content-header {
+            flex: 1;
+            min-width: 0;
+
+            .content-category {
+               text-transform: uppercase;
+               font-size: 14px;
+               font-weight: bold;
+            }
+
+            .content-title {
+               font-size: 15px;
+               font-weight: 500;
+               margin-bottom: 5px;
+            }
+
+            .content-category {
+               text-transform: uppercase;
+               font-size: 12px;
+               display: inline-block;
+               background: $border;
+               color: $text-default;
+               padding: 6px 10px 1px;
+               margin: 0 0 7px;
+               line-height: 1;
+            }
+
+            .content-date {
+               font-size: 12px;
+               font-weight: 500;
+               color: $text-date;
+            }
+         }
+
+         .content-image {
+            width: 150px;
+            flex-shrink: 0;
+         }
       }
    }
 }
@@ -628,6 +778,57 @@ body.page-user-password {
          background: #fbe9e7;
          color: #b71c1c;
          border-radius: 6px;
+      }
+   }
+}
+
+//nodes
+.path-node {
+   .node--view-mode-full {
+      header {
+         margin: 0 0 10px;
+      }
+   }
+
+   .field--type-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .field--type-datetime {
+      margin: 15px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $text-date;
+   }
+
+   .field--name-body {
+      font-size: 1.25rem;
+      color: $text-default;
+      line-height: 150%;
+   }
+}
+
+//Blocos Relacionados/Laterais
+.css-bloco-menu-relacionado {
+   .views-row {
+      margin: 0 0 7px;
+      padding: 0 0 7px;
+      border-bottom: 1px solid $border;
+
+      .views-field-title {
+         padding: 0;
+
+         a {
+            font-size: 1.15rem;
+            color: black;
+            font-weight: 500;
+
+            &:hover {
+               color: $tagDestaque;
+            }
+         }
       }
    }
 }
